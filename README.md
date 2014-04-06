@@ -4,6 +4,11 @@ A wrapper around the native Node 'cluster' built-in, that provides a convenient 
 multiple workers by configuration. Workers can be configured to perform different roles; multiple instances
 of the same role can be set; a worker of the same role can automatically respawn if one dies.
 
+## Installation
+
+```js
+npm install cluster-role
+``` 
 
 ## Usage
 
@@ -22,6 +27,28 @@ if (cluster.isMaster) {
     });
 }
 ```
+
+## API
+
+#### .isMaster
+True if the process is a master. This is a convenience to the underlying Node 'cluster' implementation
+
+#### .isWorker
+True if the process is a worker. This is a convenience to the underlying Node 'cluster' implementation
+
+#### .start(config, [dir])
+Starts worker processes described by `config`. This may be a single role object, or an array of multiple role objects.
+Each may have the following properties: 
+
+* `role` : This should correspond to a executable JS file in `dir` where workers reside.
+* `instance` (optional) : The number of worker instances to spawn, or `'cpu'` to denote the number of CPU cores.
+Defaults to 1.
+* `respawn` (optional) : Whether to respawn a new process when one dies. Defaults to `true`.
+
+* `dir` : the name of a directory where all worker JS files reside. Defaults to a subdirectory named `worker`
+immediately under the JS that called `start()`.
+
+
 
 
 ##License
