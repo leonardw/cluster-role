@@ -1,0 +1,5 @@
+.DS_Store
+.jshintrc
+.README.md.html
+node_modules/
+
