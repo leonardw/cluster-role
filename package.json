@@ -1,26 +1,36 @@
 {
-	"name": "cluster-role",
-	"version": "0.0.1",
-	"description": "A wrapper around the native Node 'cluster' built-in, that provides a convenient interface to start up multiple workers of different roles by configuration",
-	"author": "Leonard Wu <leonard.wu92@alumni.ic.ac.uk>",
-	"contributors": [{
-		"name": "Leonard Wu",
-		"email": "leonard.wu92@alumni.ic.ac.uk "
-	}],
-	"main": "lib/master.js",
-	"dependencies": {
-		"callsite": "1.0.0"
-	},
-	"repository": "https://github.com/leonardw/cluster-role.git",
-	"keywords": [
-		"server",
-		"workers",
-		"cluster",
-		"reload",
-		"redundancy",
-		"ha",
-		"high-availability"
-	],
-	"license": "MIT",
-	"readmeFilename": "README.md"
+  "name": "cluster-role",
+  "version": "0.0.1",
+  "description": "A wrapper around the native Node 'cluster' built-in, that provides a convenient interface to start up multiple workers of different roles by configuration",
+  "author": "Leonard Wu <leonard.wu92@alumni.ic.ac.uk>",
+  "contributors": [{
+    "name": "Leonard Wu",
+    "email": "leonard.wu92@alumni.ic.ac.uk"
+  }],
+  "main": "lib/master.js",
+  "dependencies": {
+    "callsite": "1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leonardw/cluster-role.git"
+  },
+  "keywords": [
+    "server",
+    "workers",
+    "cluster",
+    "reload",
+    "redundancy",
+    "ha",
+    "high-availability"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leonardw/cluster-role/issues"
+  },
+  "homepage": "https://github.com/leonardw/cluster-role",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
