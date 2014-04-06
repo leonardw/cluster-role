@@ -1,5 +1,5 @@
 .DS_Store
 .jshintrc
-.README.md.html
+.*.md.html
 node_modules/
 
