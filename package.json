@@ -1,8 +1,7 @@
 {
 	"name": "cluster-role",
 	"version": "0.0.1",
-	"description": "A wrapper around the native Node 'cluster' built-in, that provides a convenient interface to start up
-multiple workers of different roles by configuration",
+	"description": "A wrapper around the native Node 'cluster' built-in, that provides a convenient interface to start up multiple workers of different roles by configuration",
 	"author": "Leonard Wu <leonard.wu92@alumni.ic.ac.uk>",
 	"contributors": [{
 		"name": "Leonard Wu",
