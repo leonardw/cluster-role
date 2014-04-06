@@ -1,8 +1,7 @@
 # cluster-role
 
 A wrapper around the native Node 'cluster' built-in, that provides a convenient interface to start up
-multiple workers by configuration. Workers can be configured to perform different roles; multiple instances
-of the same role can be set; a worker of the same role can automatically respawn if one dies.
+multiple workers by configuration.
 
 Features:
 * Start workers of different roles, multiple instances per role, en masse by configuration
