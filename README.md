@@ -65,7 +65,7 @@ Each may have the following properties:
 * `role` : This should correspond to an executable JS file in `dir` where workers reside.
 * `instance` (optional) : The number of worker instances to spawn, or `'cpu'` to denote the number of CPU cores.
 Defaults to 1.
-* `respawn` (optional) : Whether to respawn a new process when one dies. Defaults to `true`.
+* `respawn` (optional) : Whether to respawn a new process when one dies. Defaults to `false`.
 
 Additionally, a custom worker directory can be specified.
 * `dir` (optional) : The name of a directory where all worker JS files reside. Defaults to a subdirectory named `worker`
