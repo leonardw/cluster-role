@@ -8,6 +8,8 @@ Features:
 * Automatic bootstrapping of worker processes to start the required 'role'
 * Configurable number of instances per role, or bound to CPU cores
 * Configurable respawning of new worker process to replace deceased ones
+* Automatic port assignment for workers by role
+* Send message to a group of workers by role
 
 
 ## Installation
@@ -66,12 +68,27 @@ Each may have the following properties:
 * `instance` (optional) : The number of worker instances to spawn, or `'cpu'` to denote the number of CPU cores.
 Defaults to 1.
 * `respawn` (optional) : Whether to respawn a new process when one dies. Defaults to `false`.
+* `port` (optional) : A port assignment for all workers of this role, or 'auto' to use an automatic allocation.
+This sets `process.env.PORT` in worker processes, but workers may choose not to respect it.
 
 Additionally, a custom worker directory can be specified.
 * `dir` (optional) : The name of a directory where all worker JS files reside. Defaults to a subdirectory named `worker`
 under the same directory as the JS that initiated `spawn()`.
 
+#### .onListen(role, callback)
+Receive port listening events from workers of a given role. Note that this is triggered when the first member worker of the role starts listening on a port.
 
+* `role` : The role in which a group of workers have been created to participate.
+* `callback`: A callback of signature `function(worker, address, env)` where
+	* `worker`: The Node `worker` object;
+	* `address`: An address object containing IP `address` and `port`;
+	* `env`: OS environment variables in the worker process.
+
+#### .send(role, message)
+Send a message to all workers of a given role. In the worker process, the message is received via `process.on('message', callback)`.
+
+* `role` : The role in which a group of workers have been created to participate.
+* `message`: The message, which may be JSON.
 
 
 ##License

@@ -1,5 +1,11 @@
 # Change Log - cluster-role
 
+### 0.2.0, 2014-08-31
+* Added `port` config option which gets set as `process.env.PORT` in worker process
+* `port` may be set as `'auto'` so it's automatic allocated the next port number
+* Added `onListen()` for role port-listening events.
+* Added `send()` for messaging all members of a role
+
 ### 0.1.1, 2014-04-11
 * Fix master crash with 'Cannot read property of undefined' error due to asynchronous console
 log. As a result, lifecycle event log only show worker role name on a best-effort basis.
